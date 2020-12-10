@@ -38,15 +38,16 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         justifyContent: 'space-between',
         borderRadius: 69,
-        elevation: 5
+        elevation: 10,
         // width: 250
     },
     wrapper: {
         position: 'absolute',
-        bottom: 10,
-        width,
+        bottom: 15,
+        width : 350,
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        marginHorizontal: 5
     }
 });
 
