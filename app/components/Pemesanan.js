@@ -1,26 +1,24 @@
 import React from 'react';
-import {View, StyleSheet, Text} from 'react-native';
+import { Container, Header, Content, Tab, Tabs } from 'native-base';
 
-const Pemesanan = () => {
+import Tab1 from './PemesananProses';
+import Tab2 from './PemesananSelesai';
+
+const Pemesanan =() => {
     return (
-        <View style={styles.container}>
-            <Text style={styles.text}>Pemesanan</Text>
-        </View>
-    );
-};
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#76a6ef'
-    },
-    text: {
-        fontSize: 20,
-        fontWeight: 'bold',
-        color: '#fff'
-    },
-});
+        <Container>
+          <Tabs>
+            <Tab
+            heading="Dalam Proses">
+              <Tab1 />
+            </Tab>
+            <Tab 
+            heading="Selesai">
+              <Tab2 />
+            </Tab>
+          </Tabs>
+        </Container>
+      );
+}
 
 export default Pemesanan;
