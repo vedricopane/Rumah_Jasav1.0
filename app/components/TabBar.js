@@ -46,10 +46,11 @@ const styles = StyleSheet.create({
   wrapper: {
     position: "absolute",
     bottom: 15,
-    width: 350,
+    // width: 350,
+    width,
     alignItems: "center",
     justifyContent: "center",
-    marginHorizontal: 5,
+    // marginHorizontal: 5,
   },
 });
 
