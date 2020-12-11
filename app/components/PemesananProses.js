@@ -1,12 +1,8 @@
-import React from 'react'
-import {Text} from 'native-base'
+import React from "react";
+import { Text } from "native-base";
 
-const PemesananProses =() =>{
-    return(
-        <Text>
-            Test
-        </Text>
-    )
-}
+const PemesananProses = () => {
+  return <Text>Test</Text>;
+};
 
 export default PemesananProses;

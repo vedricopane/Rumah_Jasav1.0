@@ -1,21 +1,17 @@
 import React from "react";
 import { View, StyleSheet, Text } from "react-native";
-import HomeIcon from "../organism/HomeIcon";
-const Home = () => {
+
+const Login = () => {
   return (
     <View style={styles.container}>
       <View style={styles.saldo}></View>
       <Text style={styles.text}>Pilih Jasa</Text>
       <View style={styles.wrapperCardJasa}>
-        <HomeIcon Nama={"ART"} />
-        <HomeIcon Nama={"ART"} />
-        <HomeIcon Nama={"ART"} />
-      </View>
-
-      <View style={styles.wrapperCardJasa}>
-        <HomeIcon Nama={"ART"} />
-        <HomeIcon Nama={"ART"} />
-        <HomeIcon Nama={"ART"} />
+        <View style={styles.cardJasa}>
+          <View>
+            <Text>Asisten Rumah Tangga</Text>
+          </View>
+        </View>
       </View>
     </View>
   );
@@ -44,7 +40,16 @@ const styles = StyleSheet.create({
     borderRadius: 69,
     elevation: 1,
   },
-
+  cardJasa: {
+    width: 106,
+    height: 111,
+    marginTop: 20,
+    margin: 4,
+    backgroundColor: "white",
+    borderWidth: 1,
+    borderColor: "#E4E4E4",
+    borderRadius: 10,
+  },
   wrapperCardJasa: {
     flexDirection: "row",
     justifyContent: "space-around",
@@ -52,4 +57,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Home;
+export default Login;
