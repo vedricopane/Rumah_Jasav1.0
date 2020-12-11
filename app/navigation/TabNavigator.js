@@ -14,11 +14,17 @@ const LoginStack = createStackNavigator();
 
 const LoginNavigator = () => {
   return (
-    <LoginStack.Navigator>
+    <LoginStack.Navigator initialRouteName="Login">
       <LoginStack.Screen
         name="Login"
         component={Login}
-        initialParams={{ icon: "home" }}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <LoginStack.Screen
+        name="TabNavigator"
+        component={TabNavigator}
         options={{
           headerShown: false,
         }}
@@ -26,23 +32,30 @@ const LoginNavigator = () => {
     </LoginStack.Navigator>
   );
 };
+
 const TabNavigator = () => {
   return (
-    <Tab.Navigator tabBar={(props) => <TabBar {...props} />}>
+    <Tab.Navigator
+      initialRouteName="Home"
+      tabBar={(props) => <TabBar {...props} />}
+    >
       <Tab.Screen
-        name="Beranda"
+        name="Home"
         component={Home}
         initialParams={{ icon: "home" }}
+        options={{ headerShown: false }}
       />
       <Tab.Screen
         name="Pemesanan"
         component={OrderStackScreen}
         initialParams={{ icon: "medicinebox" }}
+        options={{ headerShown: false }}
       />
       <Tab.Screen
         name="Profil"
         component={ProfileStackScreen}
         initialParams={{ icon: "user" }}
+        options={{ headerShown: false }}
       />
     </Tab.Navigator>
   );
@@ -63,7 +76,11 @@ const OrderStackScreen = () => {
         },
       }}
     >
-      <OrderStack.Screen name="Pesanan" component={Pemesanan} />
+      <OrderStack.Screen
+        name="Pesanan"
+        component={Pemesanan}
+        options={{ headerShown: false }}
+      />
     </OrderStack.Navigator>
   );
 };
@@ -83,9 +100,13 @@ const ProfileStackScreen = () => {
         },
       }}
     >
-      <ProfileStack.Screen name="Profil" component={Profil} />
+      <ProfileStack.Screen
+        name="Profil"
+        component={Profil}
+        options={{ headerShown: false }}
+      />
     </ProfileStack.Navigator>
   );
 };
 
-export default TabNavigator;
+export default LoginNavigator;
