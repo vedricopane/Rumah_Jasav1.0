@@ -88,4 +88,4 @@ const ProfileStackScreen = () => {
   );
 };
 
-export default TabNavigator;
+export default LoginNavigator;
