@@ -2,6 +2,7 @@ import React from "react";
 import { View, StyleSheet, Text } from "react-native";
 import artIcon from "../assets/icons/artIcon.png";
 import HomeIcon from "../organism/HomeIcon";
+
 const Home = () => {
   return (
     <View style={styles.container}>
