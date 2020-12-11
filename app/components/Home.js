@@ -1,5 +1,6 @@
 import React from 'react';
-import {View, StyleSheet, Text} from 'react-native';
+import {View, StyleSheet, Text, Image} from 'react-native';
+// import artIcon from './artIcon.png';
 
 const Home = () => {
     return (
@@ -7,40 +8,32 @@ const Home = () => {
             <View style={styles.saldo}>
 
             </View>
-            <Text style={styles.text}>Pilih Jasa</Text>
+            <Text style={styles.textPilihJasa}>Pilih Jasa</Text>
+
             <View style={styles.wrapperCardJasa}>
-                <View style={styles.cardJasa}>
-                    <View>
-                        <Text>Asisten Rumah Tangga</Text>
-                    </View>
+                <View style={styles.cardPilihJasa}>
+                    {/* <Image 
+                        source={artIcon}
+                        style={styles.iconJasa}/> */}
+                    <Text>Asisten Rumah Tangga</Text>
                 </View>
-                <View style={styles.cardJasa}>
-                    <View>
-                        <Text>dsdsda</Text>
-                    </View>
+                <View style={styles.cardPilihJasa}>
+                    
                 </View>
-                <View style={styles.cardJasa}>
-                    <View>
-                        <Text>dsdsda</Text>
-                    </View>
+                <View style={styles.cardPilihJasa}>
+                    
                 </View>
             </View>
 
             <View style={styles.wrapperCardJasa}>
-                <View style={styles.cardJasa}>
-                    <View>
-                        <Text>dsdsda</Text>
-                    </View>
+                <View style={styles.cardPilihJasa}>
+                    
                 </View>
-                <View style={styles.cardJasa}>
-                    <View>
-                        <Text>dsdsda</Text>
-                    </View>
+                <View style={styles.cardPilihJasa}>
+                    
                 </View>
-                <View style={styles.cardJasa}>
-                    <View>
-                        <Text>dsdsda</Text>
-                    </View>
+                <View style={styles.cardPilihJasa}>
+                    
                 </View>
             </View>
             
@@ -55,12 +48,12 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         // backgroundColor: '#76a6ef'
     },
-    text: {
+    textPilihJasa: {
         fontSize: 20,
         fontWeight: '700',
-        letterSpacing: 6,
+        letterSpacing: 7,
         color: 'black',
-        marginTop: 25
+        marginTop: 50
     },
     saldo: {
         width: 250,
@@ -71,7 +64,12 @@ const styles = StyleSheet.create({
         borderRadius: 69,
         elevation: 1
     },
-    cardJasa: {
+    wrapperCardJasa: {
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        alignItems: 'center',
+    },
+    cardPilihJasa: {
         width : 106,
         height: 111,
         marginTop: 20,
@@ -81,10 +79,19 @@ const styles = StyleSheet.create({
         borderColor: '#E4E4E4',
         borderRadius: 10
     },
-    wrapperCardJasa: {
-        flexDirection: 'row',
-        justifyContent: 'space-around',
-        alignItems: 'center'
+    // cardPilihJasa: {
+    //     borderColor: '#E42313', 
+    //     borderWidth: 1, 
+    //     width: 66, 
+    //     height: 66,
+    //     borderRadius: 66/2,
+    //     justifyContent: 'center',
+    //     alignItems: 'center',
+    //     position: 'relative',
+    //     marginTop: 20
+    // },
+    iconJasa: {
+        width:51, height: 51
     }
 });
 

@@ -4,7 +4,7 @@ import {View, StyleSheet, Text} from 'react-native';
 const Profil = () => {
     return (
         <View style={styles.container}>
-            <Text style={styles.text}>Profil User Pengguna</Text>
+            <Text style={styles.text}>Profil User Penggunagit</Text>
         </View>
     );
 };
