@@ -1,21 +1,21 @@
 import React from 'react';
 import {View, StyleSheet, Text, Image} from 'react-native';
-// import artIcon from './artIcon.png';
+import artIcon from '../assets/icons/artIcon.png';
 
 const Home = () => {
     return (
         <View style={styles.container}>
             <View style={styles.saldo}>
-
             </View>
             <Text style={styles.textPilihJasa}>Pilih Jasa</Text>
-
             <View style={styles.wrapperCardJasa}>
                 <View style={styles.cardPilihJasa}>
-                    {/* <Image 
-                        source={artIcon}
-                        style={styles.iconJasa}/> */}
-                    <Text>Asisten Rumah Tangga</Text>
+                    <View style={styles.cardJasa}>
+                        <Image
+                            source={artIcon}
+                            style={styles.iconJasa}/>
+                        <Text style={styles.textJasa}>Asisten Rumah Tangga</Text>
+                    </View>    
                 </View>
                 <View style={styles.cardPilihJasa}>
                     
@@ -71,27 +71,36 @@ const styles = StyleSheet.create({
     },
     cardPilihJasa: {
         width : 106,
-        height: 111,
+        height: 120,
         marginTop: 20,
         margin: 4,
         backgroundColor: 'white',
         borderWidth: 1,
         borderColor: '#E4E4E4',
-        borderRadius: 10
+        borderRadius: 10,
+        justifyContent: 'center',
+        alignItems: 'center'
     },
-    // cardPilihJasa: {
-    //     borderColor: '#E42313', 
-    //     borderWidth: 1, 
-    //     width: 66, 
-    //     height: 66,
-    //     borderRadius: 66/2,
-    //     justifyContent: 'center',
-    //     alignItems: 'center',
-    //     position: 'relative',
-    //     marginTop: 20
-    // },
+    cardJasa: {
+        borderColor: '#E42313', 
+        borderWidth: 1, 
+        width: 66, 
+        height: 66,
+        flex: 1,
+        borderRadius: 66/2,
+        justifyContent: 'center',
+        alignItems: 'center',
+        position: 'relative',
+        marginTop: 20
+    },
     iconJasa: {
-        width:51, height: 51
+        width:50, height: 50
+    },
+    textJasa: {
+        fontSize: 13,
+        fontWeight: '200',
+        color: 'black',
+        // marginTop: 50
     }
 });
 
