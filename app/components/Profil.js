@@ -11,45 +11,32 @@ import {
   Right,
   Icon,
   Header,
-  Button
+  Button,
 } from "native-base";
-import Logout from '../assets/icons/Logout.png'
-import Foto from '../assets/icons/tuyul.jpg'
+import Logout from "../assets/icons/Logout.png";
+import Foto from "../assets/icons/tuyul.jpg";
 
-const Profil = ({navigation}) => {
+const Profil = ({ navigation }) => {
   return (
     <Container>
-      <Button full 
-      backgroundColor='#e42313'>
-            <Text
-            style={styles.TabText}>Profile</Text>
+      <Button full backgroundColor="#e42313">
+        <Text style={styles.TabText}>Profile</Text>
       </Button>
       <Content>
         <View style={styles.flex}>
           <Left>
             <View style={styles.flex}>
-              <Image 
-              style={styles.fotoprofil}
-              source={Foto}/>
-              <View
-              style={styles.Marginname} >
-                <Text style={styles.TitleName}>
-                  Tiana Rosser
-                </Text>
-                <Text style={styles.IsiName}>
-                  +123456789123
-                </Text>
-                <Text style={styles.IsiName}>
-                  tianacantik@gmail.com                  
-                </Text>
+              <Image style={styles.fotoprofil} source={Foto} />
+              <View style={styles.Marginname}>
+                <Text style={styles.TitleName}>Tiana Rosser</Text>
+                <Text style={styles.IsiName}>+123456789123</Text>
+                <Text style={styles.IsiName}>tianacantik@gmail.com</Text>
               </View>
             </View>
           </Left>
           <Right>
-            <TouchableOpacity onPress={() => navigation.navigate('Login')}>
-              <Image
-              source={Logout}
-              on/>
+            <TouchableOpacity onPress={() => navigation.navigate("Login")}>
+              <Image source={Logout} on />
             </TouchableOpacity>
           </Right>
         </View>
@@ -137,8 +124,8 @@ const styles = StyleSheet.create({
   },
   titleText: {
     fontSize: 20,
-    fontWeight: '500',
-    color: '#e42313',
+    fontWeight: "500",
+    color: "#e42313",
   },
   isiText: {
     fontFamily: "Roboto",
@@ -149,27 +136,27 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
   },
   TitleName: {
-    fontFamily: 'Roboto',
+    fontFamily: "Roboto",
     fontSize: 20,
-    fontWeight: 'bold'
+    fontWeight: "bold",
   },
   IsiName: {
-    fontFamily: 'Roboto',
+    fontFamily: "Roboto",
     fontSize: 12,
-    fontWeight: '300'
+    fontWeight: "300",
   },
   Marginname: {
     marginLeft: 10,
   },
-  TabText:{
-    color:'#fff',
+  TabText: {
+    color: "#fff",
     fontFamily: "Roboto",
     fontSize: 17,
-    fontWeight: 'bold',
-    fontStyle: 'normal',
+    fontWeight: "bold",
+    fontStyle: "normal",
   },
   flex: {
-    flexDirection: 'row',
+    flexDirection: "row",
     height: 100,
     marginTop: 20,
   },
@@ -179,7 +166,7 @@ const styles = StyleSheet.create({
     height: 70,
     borderRadius: 300,
     marginLeft: 10,
-  }
+  },
 });
 
 export default Profil;
