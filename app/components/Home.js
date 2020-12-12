@@ -56,6 +56,7 @@ const Home = () => {
             </View>
           </View>
         </View>
+        </ImageBackground>
         <View style={styles.containerLeft}>
           <View style={styles.saldo}>
             <View style={styles.wrapperSaldo}>
@@ -81,7 +82,7 @@ const Home = () => {
             <HomeIcon Name="ART" Gambar={artIcon} />
           </View>
         </View>
-      </ImageBackground>
+      
     </ScrollView>
   );
 };
@@ -105,7 +106,7 @@ const styles = StyleSheet.create({
   },
   ImgHeader: {
     width: "100%",
-    height: Dimensions.get("window").height * 0.35,
+    height: Dimensions.get("window").height * 0.40,
   },
   containerLeft: {
     // flex: 1,
@@ -121,10 +122,10 @@ const styles = StyleSheet.create({
     fontWeight: "700",
     letterSpacing: 7,
     color: "black",
-    marginTop: 50,
+    marginTop: normalize(50),
   },
   saldo: {
-    marginTop: normalize(100),
+    marginTop: normalize(-30),
     width: 280,
     height: 55,
     backgroundColor: "white",
