@@ -12,6 +12,12 @@ import {
   ScrollView,
 } from "react-native";
 import artIcon from "../assets/icons/artIcon.png";
+import tkKebunIcon from "../assets/icons/tkKebunIcon.png";
+import driverIcon from "../assets/icons/driverIcon.png";
+import babysitterIcon from "../assets/icons/babysitterIcon.png";
+import satpamIcon from "../assets/icons/satpamIcon.png";
+import asistenPribadiIcon from "../assets/icons/asistenPribadiIcon.png";
+
 import HomeIcon from "../organism/HomeIcon";
 import SaldoIcon from "../assets/icons/saldoIcon.png";
 import shape from "../assets/Background/Shape.png";
@@ -56,6 +62,7 @@ const Home = () => {
             </View>
           </View>
         </View>
+      </ImageBackground>
         <View style={styles.containerLeft}>
           <View style={styles.saldo}>
             <View style={styles.wrapperSaldo}>
@@ -71,17 +78,17 @@ const Home = () => {
           <Text style={styles.textPilihJasa}>Pilih Jasa</Text>
           <View style={styles.wrapperCardJasa}>
             <HomeIcon Name="ART" Gambar={artIcon} />
-            <HomeIcon Name="ART" Gambar={artIcon} />
-            <HomeIcon Name="ART" Gambar={artIcon} />
+            <HomeIcon Name="Tukang Kebun" Gambar={tkKebunIcon} />
+            <HomeIcon Name="Driver" Gambar={driverIcon} />
           </View>
 
           <View style={styles.wrapperCardJasa}>
-            <HomeIcon Name="ART" Gambar={artIcon} />
-            <HomeIcon Name="ART" Gambar={artIcon} />
-            <HomeIcon Name="ART" Gambar={artIcon} />
+            <HomeIcon Name="Babysitter" Gambar={babysitterIcon} />
+            <HomeIcon Name="Satpam" Gambar={satpamIcon} />
+            <HomeIcon Name="Asisten Pribadi" Gambar={asistenPribadiIcon} />
           </View>
         </View>
-      </ImageBackground>
+      {/* </ImageBackground> */}
     </ScrollView>
   );
 };
@@ -105,7 +112,7 @@ const styles = StyleSheet.create({
   },
   ImgHeader: {
     width: "100%",
-    height: Dimensions.get("window").height * 0.35,
+    height: Dimensions.get("window").height * 0.4, 
   },
   containerLeft: {
     // flex: 1,
@@ -121,10 +128,10 @@ const styles = StyleSheet.create({
     fontWeight: "700",
     letterSpacing: 7,
     color: "black",
-    marginTop: 50,
+    marginTop: 40,
   },
   saldo: {
-    marginTop: normalize(100),
+    marginTop: normalize(-33),
     width: 280,
     height: 55,
     backgroundColor: "white",
@@ -169,7 +176,7 @@ const styles = StyleSheet.create({
   wrapperCardJasa: {
     flexDirection: "row",
     justifyContent: "space-around",
-    alignItems: "center",
+    alignItems: 'center'
   },
   flex: {
     justifyContent: "center",

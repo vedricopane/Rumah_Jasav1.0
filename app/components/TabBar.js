@@ -48,14 +48,13 @@ const styles = StyleSheet.create({
     elevation: 5,
     marginLeft: normalize(10),
     marginRight: normalize(10),
-
     // width: 250
   },
   wrapper: {
     position: "absolute",
     bottom: 15,
     width: 350,
-    // width,
+    width,
     alignItems: "center",
     justifyContent: "center",
     // marginHorizontal: 5,
