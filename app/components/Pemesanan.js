@@ -12,7 +12,7 @@ const Pemesanan = () => {
   return (
     <Container>
       <Header style={styles.header}>
-        <Text style={styles.TabText}>Profile</Text>
+        <Text style={styles.TabText}>Pesanan</Text>
       </Header>
       <tab.Navigator initialRouteName="Dalam Proses"      >
         <tab.Screen

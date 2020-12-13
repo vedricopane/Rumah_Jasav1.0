@@ -46,7 +46,7 @@ const TabNavigator = () => {
         options={{ headerShown: false }}
       />
       <Tab.Screen
-        name="Pemesanan"
+        name="Pesanan"
         component={OrderStackScreen}
         initialParams={{ icon: "medicinebox" }}
         options={{ headerShown: false }}
