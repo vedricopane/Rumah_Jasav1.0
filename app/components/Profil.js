@@ -1,27 +1,18 @@
 import React from "react";
 import { StyleSheet, View, Image, TouchableOpacity } from "react-native";
 import {
-  Container,
-  Separator,
-  Content,
-  List,
-  ListItem,
-  Text,
-  Left,
-  Right,
-  Icon,
-  Header,
-  Button,
-} from "native-base";
+  Container, Separator, Content, List, ListItem, Text,
+  Left, Right, Icon, Header, Button,} from "native-base";
+import normalize from "react-native-normalize";
 import Logout from "../assets/icons/Logout.png";
 import Foto from "../assets/icons/tuyul.jpg";
 
 const Profil = ({ navigation }) => {
   return (
     <Container>
-      <Button full backgroundColor="#e42313">
+      <Header style={styles.header}>
         <Text style={styles.TabText}>Profile</Text>
-      </Button>
+      </Header>
       <Content>
         <View style={styles.flex}>
           <Left>
@@ -166,6 +157,12 @@ const styles = StyleSheet.create({
     height: 70,
     borderRadius: 300,
     marginLeft: 10,
+  },
+  header:{
+    backgroundColor:'#e42313',
+    alignItems:'center',
+    justifyContent:'center',
+    height: normalize(53),
   },
 });
 

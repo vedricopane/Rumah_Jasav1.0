@@ -62,11 +62,7 @@ const Home = () => {
             </View>
           </View>
         </View>
-<<<<<<< HEAD
-      </ImageBackground>
-=======
         </ImageBackground>
->>>>>>> b465d3daa9b1b662f42661fbd05194b6c240b756
         <View style={styles.containerLeft}>
           <View style={styles.saldo}>
             <View style={styles.wrapperSaldo}>
@@ -92,11 +88,7 @@ const Home = () => {
             <HomeIcon Name="Asisten Pribadi" Gambar={asistenPribadiIcon} />
           </View>
         </View>
-<<<<<<< HEAD
-      {/* </ImageBackground> */}
-=======
       
->>>>>>> b465d3daa9b1b662f42661fbd05194b6c240b756
     </ScrollView>
   );
 };
@@ -120,11 +112,7 @@ const styles = StyleSheet.create({
   },
   ImgHeader: {
     width: "100%",
-<<<<<<< HEAD
-    height: Dimensions.get("window").height * 0.4, 
-=======
     height: Dimensions.get("window").height * 0.40,
->>>>>>> b465d3daa9b1b662f42661fbd05194b6c240b756
   },
   containerLeft: {
     // flex: 1,
@@ -140,17 +128,10 @@ const styles = StyleSheet.create({
     fontWeight: "700",
     letterSpacing: 7,
     color: "black",
-<<<<<<< HEAD
-    marginTop: 40,
-  },
-  saldo: {
-    marginTop: normalize(-33),
-=======
     marginTop: normalize(50),
   },
   saldo: {
     marginTop: normalize(-30),
->>>>>>> b465d3daa9b1b662f42661fbd05194b6c240b756
     width: 280,
     height: 55,
     backgroundColor: "white",
