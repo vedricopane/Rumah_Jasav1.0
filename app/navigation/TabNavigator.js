@@ -7,6 +7,11 @@ import Profil from "../components/Profil";
 import TabBar from "../components/TabBar";
 import Login from "../components/Login";
 import ART from "../components/ART";
+import TukangKebun from "../components/TukangKebun";
+import Driver from "../components/Driver";
+import Babysitter from "../components/Babysitter";
+import Satpam from "../components/Satpam";
+import AsistenPribadi from "../components/AsistenPribadi";
 
 const Tab = createBottomTabNavigator();
 const OrderStack = createStackNavigator();
@@ -34,7 +39,42 @@ const LoginNavigator = () => {
         name="ART"
         component={ART}
         options={{
-          headerShown: false,
+          headerShown: true,
+        }}
+      />
+      <LoginStack.Screen
+        name="TukangKebun"
+        component={TukangKebun}
+        options={{
+          headerShown: true,
+        }}
+      />
+      <LoginStack.Screen
+        name="Driver"
+        component={Driver}
+        options={{
+          headerShown: true,
+        }}
+      />
+      <LoginStack.Screen
+        name="Babysitter"
+        component={Babysitter}
+        options={{
+          headerShown: true,
+        }}
+      />
+      <LoginStack.Screen
+        name="Satpam"
+        component={Satpam}
+        options={{
+          headerShown: true,
+        }}
+      />
+      <LoginStack.Screen
+        name="AsistenPribadi"
+        component={AsistenPribadi}
+        options={{
+          headerShown: true,
         }}
       />
     </LoginStack.Navigator>

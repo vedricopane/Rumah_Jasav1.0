@@ -80,22 +80,22 @@ const Home = ({navigation}) => {
             <TouchableOpacity onPress={()=> navigation.navigate("ART")}>
               <HomeIcon Name="ART" Gambar={artIcon} />
             </TouchableOpacity>
-            <TouchableOpacity onPress={()=> navigation.navigate("ART")}>
+            <TouchableOpacity onPress={()=> navigation.navigate("TukangKebun")}>
               <HomeIcon Name="Tukang Kebun" Gambar={tkKebunIcon} />
             </TouchableOpacity>
-            <TouchableOpacity onPress={()=> navigation.navigate("ART")}>
+            <TouchableOpacity onPress={()=> navigation.navigate("Driver")}>
               <HomeIcon Name="Driver" Gambar={driverIcon} />
             </TouchableOpacity>
           </View>
 
           <View style={styles.wrapperCardJasa}>
-            <TouchableOpacity onPress={()=> navigation.navigate("ART")}>
+            <TouchableOpacity onPress={()=> navigation.navigate("Babysitter")}>
               <HomeIcon Name="Babysitter" Gambar={babysitterIcon} />
             </TouchableOpacity>
-            <TouchableOpacity onPress={()=> navigation.navigate("ART")}>
+            <TouchableOpacity onPress={()=> navigation.navigate("Satpam")}>
               <HomeIcon Name="Satpam" Gambar={satpamIcon} />
             </TouchableOpacity>
-            <TouchableOpacity onPress={()=> navigation.navigate("ART")}>
+            <TouchableOpacity onPress={()=> navigation.navigate("AsistenPribadi")}>
               <HomeIcon Name="Asisten Pribadi" Gambar={asistenPribadiIcon} />
             </TouchableOpacity>
           </View>
