@@ -25,7 +25,7 @@ import normalize from "react-native-normalize";
 import LogoPutih from "../assets/icons/Rumah_Jasa_1.png";
 import Foto from "../assets/icons/tuyul.jpg";
 
-const Home = () => {
+const Home = ({navigation}) => {
   return (
     <ScrollView>
       <ImageBackground source={shape} style={styles.ImgHeader}>
@@ -77,15 +77,27 @@ const Home = () => {
           </View>
           <Text style={styles.textPilihJasa}>Pilih Jasa</Text>
           <View style={styles.wrapperCardJasa}>
-            <HomeIcon Name="ART" Gambar={artIcon} />
-            <HomeIcon Name="Tukang Kebun" Gambar={tkKebunIcon} />
-            <HomeIcon Name="Driver" Gambar={driverIcon} />
+            <TouchableOpacity onPress={()=> navigation.navigate("ART")}>
+              <HomeIcon Name="ART" Gambar={artIcon} />
+            </TouchableOpacity>
+            <TouchableOpacity onPress={()=> navigation.navigate("ART")}>
+              <HomeIcon Name="Tukang Kebun" Gambar={tkKebunIcon} />
+            </TouchableOpacity>
+            <TouchableOpacity onPress={()=> navigation.navigate("ART")}>
+              <HomeIcon Name="Driver" Gambar={driverIcon} />
+            </TouchableOpacity>
           </View>
 
           <View style={styles.wrapperCardJasa}>
-            <HomeIcon Name="Babysitter" Gambar={babysitterIcon} />
-            <HomeIcon Name="Satpam" Gambar={satpamIcon} />
-            <HomeIcon Name="Asisten Pribadi" Gambar={asistenPribadiIcon} />
+            <TouchableOpacity onPress={()=> navigation.navigate("ART")}>
+              <HomeIcon Name="Babysitter" Gambar={babysitterIcon} />
+            </TouchableOpacity>
+            <TouchableOpacity onPress={()=> navigation.navigate("ART")}>
+              <HomeIcon Name="Satpam" Gambar={satpamIcon} />
+            </TouchableOpacity>
+            <TouchableOpacity onPress={()=> navigation.navigate("ART")}>
+              <HomeIcon Name="Asisten Pribadi" Gambar={asistenPribadiIcon} />
+            </TouchableOpacity>
           </View>
         </View>
       

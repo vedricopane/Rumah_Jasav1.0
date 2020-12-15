@@ -6,6 +6,7 @@ import Pemesanan from "../components/Pemesanan";
 import Profil from "../components/Profil";
 import TabBar from "../components/TabBar";
 import Login from "../components/Login";
+import ART from "../components/ART";
 
 const Tab = createBottomTabNavigator();
 const OrderStack = createStackNavigator();
@@ -25,6 +26,13 @@ const LoginNavigator = () => {
       <LoginStack.Screen
         name="TabNavigator"
         component={TabNavigator}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <LoginStack.Screen
+        name="ART"
+        component={ART}
         options={{
           headerShown: false,
         }}
