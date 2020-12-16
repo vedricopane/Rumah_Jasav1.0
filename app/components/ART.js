@@ -1,136 +1,265 @@
 import React from "react";
-import { StyleSheet, ScrollView, SafeAreaView, View, Image } from "react-native";
-import { Container, Content, Card, CardItem, Text, Body, Right, 
-  Left} from "native-base";
+import { StyleSheet, ScrollView, SafeAreaView, View, Image, TouchableOpacity} from "react-native";
+import { Container, Content, Text, Body, Right, Button,
+  Left, Header, Separator, CheckBox, ListItem, Radio} from "native-base";
 import normalize from "react-native-normalize";
-import clock from '../assets/icons/clock.png'
 
-
-const PemesananProses = () => {
+const ART = () => {
   return (
-    <Container>
-      <SafeAreaView>
-        <ScrollView>
-        <Content padder>
-          <Card>
-            <CardItem bordered>
-              <Left>
-                <View style={styles.arah}>
-                  <Image source={clock}/>
-                  <View style={styles.margin}>
-                    <Text style={styles.status}>Dalam Pencarian
-                    </Text>
-                  </View>
-                </View>
+    <ScrollView> 
+      <Container>
+        <Header style={styles.header}>
+          <Text style={styles.TabText}>Asisten Rumah Tangga</Text>
+        </Header>
+        <Content>
+          <Separator style={styles.backgroundcolor}>
+            <Text style={styles.baseText}>
+              <Text style={styles.titleText}>Durasi Jasa</Text>
+            </Text>
+          </Separator>
+            <ListItem selected={true}>
+              <Left>  
+                <Text style={styles.textRadio}>1 Hari</Text>
               </Left>
               <Right>
-                <Text style={styles.tanggal} >Des 20, 2020</Text>
+                <Radio
+                  color={"#E42313"}
+                  selectedColor={"#E42313"}
+                  selected={false}
+                />
               </Right>
-            </CardItem>
-            <CardItem bordered>
-              <Left>
-                <Text style={styles.textJudul}>No. Pesanan</Text>
+            </ListItem>
+            <ListItem selected={true} >
+              <Left>  
+                <Text style={styles.textRadio}>1 Minggu</Text>
               </Left>
-              <Left>
-                <Text style={styles.textPesanan}>IW3475453455</Text>
+              <Right>
+                <Radio
+                  color={"#E42313"}
+                  selectedColor={"#E42313"}
+                  selected={false}
+                />
+              </Right>
+            </ListItem>
+            <ListItem selected={true} >
+              <Left>  
+                <Text style={styles.textRadio}>1 Bulan</Text>
               </Left>
-            </CardItem>
-            <CardItem bordered>
-              <Left>
-                <Text style={styles.textJudul}>Tipe Jasa</Text>
+              <Right>
+                <Radio
+                  color={"#E42313"}
+                  selectedColor={"#E42313"}
+                  selected={false}
+                />
+              </Right>
+            </ListItem>
+            <ListItem selected={true} >
+              <Left>  
+                <Text style={styles.textRadio}>1 Tahun</Text>
               </Left>
-              <Left>
-                <Text style={styles.textIsi}>Asisten Rumah Tangga</Text>
+              <Right>
+                <Radio
+                  color={"#E42313"}
+                  selectedColor={"#E42313"}
+                  selected={false}
+                />
+              </Right>
+            </ListItem>
+          <Separator style={styles.backgroundcolor}>
+            <Text style={styles.baseText}>
+              <Text style={styles.titleText}>Kemampuan</Text>
+            </Text>
+          </Separator>
+            <ListItem selected={true} >
+              <Left>  
+                <Text style={styles.textRadio}>Sangat Berpengalaman dan ditraining dengan baik</Text>
               </Left>
-            </CardItem>
-            <CardItem bordered>
-              <Left>
-                <Text style={styles.textJudul}>Durasi Jasa</Text>
+              <Right>
+                <Radio
+                  color={"#E42313"}
+                  selectedColor={"#E42313"}
+                  selected={false}
+                />
+              </Right>
+            </ListItem>
+            <ListItem selected={true} >
+              <Left>  
+                <Text style={styles.textRadio}>Berpengalaman dan ditraining</Text>
               </Left>
-              <Left>
-                <Text style={styles.textIsi}>1 Bulan</Text>
+              <Right>
+                <Radio
+                  color={"#E42313"}
+                  selectedColor={"#E42313"}
+                  selected={false}
+                />
+              </Right>
+            </ListItem>
+            <ListItem selected={true} >
+              <Left>  
+                <Text style={styles.textRadio}>Training</Text>
               </Left>
-            </CardItem>
-            <CardItem bordered>
+              <Right>
+                <Radio
+                  color={"#E42313"}
+                  selectedColor={"#E42313"}
+                  selected={false}
+                />
+              </Right>
+            </ListItem>
+          <Separator style={styles.backgroundcolor}>
+            <Text style={styles.baseText}>
+              <Text style={styles.titleText}>Pekerjaan</Text>
+            </Text>
+          </Separator>
+            <ListItem>
               <Left>
-                <Text style={styles.textJudul}>Kemampuan</Text>
+                <Text style={styles.textCheckBox}>Mencuci Pakaian</Text>
               </Left>
+              <Right>
+                <CheckBox checked={false} 
+                          color={"#E42313"} 
+                          selectedColor={"#E42313"} style={{marginRight: 13}}/>
+              </Right>
+            </ListItem>
+            <ListItem>
               <Left>
-                <Text style={styles.textIsi}>Sangat berpengalaman dan di training dengan baik</Text>
+                <Text style={styles.textCheckBox}>Menyetrika Pakaian</Text>
               </Left>
-            </CardItem>
-            <CardItem bordered>
+              <Right>
+                <CheckBox checked={false} 
+                          color={"#E42313"} 
+                          selectedColor={"#E42313"} style={{marginRight: 13}}/>
+              </Right>
+            </ListItem>
+            <ListItem>
               <Left>
-                <Text style={styles.textJudul}>Status</Text>
+                <Text style={styles.textCheckBox}>Menyapu dan mengepel</Text>
               </Left>
+              <Right>
+                <CheckBox checked={false} 
+                          color={"#E42313"} 
+                          selectedColor={"#E42313"} style={{marginRight: 13}}/>
+              </Right>
+            </ListItem>
+            <ListItem>
               <Left>
-                <Text style={styles.textStatus}>ART dalam proses pencarian</Text>
+                <Text style={styles.textCheckBox}>Mencuci piring</Text>
               </Left>
-            </CardItem>
-            <CardItem bordered>
-              <Text style={styles.textLain}>ART yang anda inginkan sedang dicari, 
-                harap tunggu konfirmasi selanjutnya.
-              </Text>
-            </CardItem>
-          </Card>
+              <Right>
+                <CheckBox checked={false} 
+                          color={"#E42313"} 
+                          selectedColor={"#E42313"} style={{marginRight: 13}}/>
+              </Right>
+            </ListItem>
+            <ListItem>
+              <Left>
+                <Text style={styles.textCheckBox}>Membersihkan kamar mandi</Text>
+              </Left>
+              <Right>
+                <CheckBox checked={false} 
+                          color={"#E42313"} 
+                          selectedColor={"#E42313"} style={{marginRight: 13}}/>
+              </Right>
+            </ListItem>
+          <Separator style={styles.backgroundcolorHargaJasa}>
+              <View style={styles.wrapperHargaJasa}>
+                <Text style={styles.textHargaJasa}>Harga Jasa</Text>
+                <Text style={styles.textNominal}>Rp 1.075.000,-</Text>
+              </View>
+              <Body>
+
+              </Body>
+              {/* <View>
+                <Button style={styles.buttonPesan}>
+                  <Text style={styles.textbutton}>Pesan</Text>
+                </Button>
+              </View> */}
+          </Separator>
         </Content>
-        </ScrollView>
-      
-      </SafeAreaView>
-    </Container>
+      </Container>
+    </ScrollView>
   )
 };
 
+
 const styles = StyleSheet.create({
-  tanggal: {
-    fontFamily: 'Roboto',
-    fontWeight:'300',
-    fontSize: normalize(13),
-    color: '#999999',
+  header: {
+    backgroundColor: "#e42313",
+    alignItems: "center",
+    justifyContent: "center",
+    height: normalize(53),
   },
-  status: {
-    fontFamily: 'Roboto',
-    fontWeight:'500',
-    fontSize: normalize(11),
-    color: '#ffcf5c',
+  TabText: {
+    color: "#fff",
+    fontFamily: "Roboto",
+    fontSize: 17,
+    fontWeight: "bold",
+    fontStyle: "normal",
   },
-  margin: {
-    marginLeft: normalize(5),
+  backgroundcolor: {
+    backgroundColor: "#fff",
+    marginTop: 5
   },
-  arah: {
-    flexDirection:'row',
+  backgroundcolorHargaJasa: {
+    backgroundColor: "#fff",
+    marginTop: 40,
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center'
   },
-  textIsi: {
-    textAlign:'left',
-    fontSize: normalize(12),
+  baseText: {
+    fontFamily: "Roboto",
+  },
+  titleText: {
+    fontSize: 18,
+    fontWeight: "bold",
+    color: "black",
+  },
+  textRadio: {
+    color: 'black',
+    fontSize: 16,
+    paddingLeft: 10
+  },
+  textCheckBox: {
+    color: 'black',
+    fontSize: 16,
+    paddingLeft: 10
+  },
+  wrapperHargaJasa: {
+    flexDirection: "column",
+    justifyContent: "space-around",
+    paddingLeft: 6,
+    marginLeft: normalize(-12)
+  },
+  textHargaJasa: {
+    fontSize: 16,
+    fontWeight: "bold",
+    letterSpacing: 2,
+    color: "#E42313",
+  },
+  textNominal: {
+    fontSize: 14,
+    fontWeight: "100",
+    letterSpacing: 1,
+  },
+  buttonPesan: {
+    // marginTop: normalize (55),
+    height: normalize(35),
+    width: normalize(155),
+    margin: normalize(5),
+    marginLeft: normalize(65),
+    textAlign: "center",
+    justifyContent: "center",
+    // alignItems: "center",
+    borderRadius: normalize(10),
+    backgroundColor: '#e42313',
+  },
+  textbutton: {
+    fontSize: normalize(16),
     fontWeight: '400',
-    marginLeft: normalize(-20),
+    color: '#fff'
   },
-  textPesanan: {
-    textAlign:'left',
-    fontSize: normalize(13),
-    fontWeight: 'bold',
-    marginLeft: normalize(-20),
-    color: '#e42313',
-  },
-  textJudul: {
-    textAlign:'left',
-    fontSize: normalize(13),
-    fontWeight: '500',
-    marginRight: normalize(20),
-  },
-  textStatus: {
-    textAlign:'left',
-    fontSize: normalize(17),
-    fontWeight: '500',
-    color: '#e42313',
-    marginLeft: normalize(-20),
-  },
-  textLain: {
-    textAlign: 'center',
-    fontSize: normalize(14),
-    fontWeight: '500',
-  }
 });
 
-export default PemesananProses;
+export default ART;

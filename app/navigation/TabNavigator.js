@@ -39,7 +39,7 @@ const LoginNavigator = () => {
         name="ART"
         component={ART}
         options={{
-          headerShown: true,
+          headerShown: false,
         }}
       />
       <LoginStack.Screen
