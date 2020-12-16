@@ -53,13 +53,13 @@ const Profil = ({ navigation }) => {
           </Text>
         </Separator>
         <List>
-          <ListItem>
-            <Left>
-              <Text style={styles.isiText}>Profil</Text>
-            </Left>
-            <Right>
-              <Icon name="arrow-forward" />
-            </Right>
+          <ListItem onPress={() => navigation.navigate("EditProfil")}>
+              <Left>
+                <Text style={styles.isiText}>Profil</Text>
+              </Left>
+              <Right>
+                <Icon name="arrow-forward" />
+              </Right>
           </ListItem>
           <ListItem>
             <Left>

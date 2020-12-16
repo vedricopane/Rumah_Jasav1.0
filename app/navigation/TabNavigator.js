@@ -12,6 +12,7 @@ import Driver from "../components/Driver";
 import Babysitter from "../components/Babysitter";
 import Satpam from "../components/Satpam";
 import AsistenPribadi from "../components/AsistenPribadi";
+import EditProfil from "../components/DetailProfil";
 
 const Tab = createBottomTabNavigator();
 const OrderStack = createStackNavigator();
@@ -46,35 +47,42 @@ const LoginNavigator = () => {
         name="TukangKebun"
         component={TukangKebun}
         options={{
-          headerShown: true,
+          headerShown: false,
         }}
       />
       <LoginStack.Screen
         name="Driver"
         component={Driver}
         options={{
-          headerShown: true,
+          headerShown: false,
         }}
       />
       <LoginStack.Screen
         name="Babysitter"
         component={Babysitter}
         options={{
-          headerShown: true,
+          headerShown: false,
         }}
       />
       <LoginStack.Screen
         name="Satpam"
         component={Satpam}
         options={{
-          headerShown: true,
+          headerShown: false,
         }}
       />
       <LoginStack.Screen
         name="AsistenPribadi"
         component={AsistenPribadi}
         options={{
-          headerShown: true,
+          headerShown: false,
+        }}
+      />
+      <LoginStack.Screen
+        name="EditProfil"
+        component={EditProfil}
+        options={{
+          headerShown: false,
         }}
       />
     </LoginStack.Navigator>
