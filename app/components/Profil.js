@@ -1,8 +1,24 @@
 import React from "react";
-import { StyleSheet, View, Image, TouchableOpacity } from "react-native";
 import {
-  Container, Separator, Content, List, ListItem, Text,
-  Left, Right, Icon, Header, Button,} from "native-base";
+  StyleSheet,
+  View,
+  Image,
+  TouchableOpacity,
+  SafeAreaView,
+} from "react-native";
+import {
+  Container,
+  Separator,
+  Content,
+  List,
+  ListItem,
+  Text,
+  Left,
+  Right,
+  Icon,
+  Header,
+  Button,
+} from "native-base";
 import normalize from "react-native-normalize";
 import Logout from "../assets/icons/Logout.png";
 import Foto from "../assets/icons/tuyul.jpg";
@@ -158,10 +174,10 @@ const styles = StyleSheet.create({
     borderRadius: 300,
     marginLeft: 10,
   },
-  header:{
-    backgroundColor:'#e42313',
-    alignItems:'center',
-    justifyContent:'center',
+  header: {
+    backgroundColor: "#e42313",
+    alignItems: "center",
+    justifyContent: "center",
     height: normalize(53),
   },
 });
