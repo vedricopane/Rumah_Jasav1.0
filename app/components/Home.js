@@ -25,7 +25,7 @@ import normalize from "react-native-normalize";
 import LogoPutih from "../assets/icons/Rumah_Jasa_1.png";
 import Foto from "../assets/icons/tuyul.jpg";
 
-const Home = ({ navigation }) => {
+const Home = ({navigation}) => {
   return (
     <View>
       <ImageBackground source={shape} style={styles.ImgHeader}>
@@ -62,48 +62,45 @@ const Home = ({ navigation }) => {
             </View>
           </View>
         </View>
-      </ImageBackground>
-      <View style={styles.containerLeft}>
-        <View style={styles.saldo}>
-          <View style={styles.wrapperSaldo}>
-            <Image source={SaldoIcon} />
-            <View style={styles.wrapperTextSaldo}>
-              <Text style={styles.textSaldo}>Saldo</Text>
-              <Text style={styles.textNominal}>Rp 200.000,-</Text>
+        </ImageBackground>
+        <View style={styles.containerLeft}>
+          <View style={styles.saldo}>
+            <View style={styles.wrapperSaldo}>
+              <Image source={SaldoIcon} />
+              <View style={styles.wrapperTextSaldo}>
+                <Text style={styles.textSaldo}>Saldo</Text>
+                <Text style={styles.textNominal}>Rp 200.000,-</Text>
+              </View>
+              <View style={styles.line} />
+              <Text style={styles.textTopUp}>Top Up</Text>
             </View>
-            <View style={styles.line} />
-            <Text style={styles.textTopUp}>Top Up</Text>
           </View>
-          <View style={styles.line} />
-          <Text style={styles.textTopUp}>Top Up</Text>
-        </View>
-        <Text style={styles.textPilihJasa}>Pilih Jasa</Text>
-        <View style={styles.wrapperCardJasa}>
-          <TouchableOpacity onPress={() => navigation.navigate("ART")}>
-            <HomeIcon Name="ART" Gambar={artIcon} />
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => navigation.navigate("TukangKebun")}>
-            <HomeIcon Name="Tukang Kebun" Gambar={tkKebunIcon} />
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => navigation.navigate("Driver")}>
-            <HomeIcon Name="Driver" Gambar={driverIcon} />
-          </TouchableOpacity>
-        </View>
+          <Text style={styles.textPilihJasa}>Pilih Jasa</Text>
+          <View style={styles.wrapperCardJasa}>
+            <TouchableOpacity onPress={()=> navigation.navigate("ART")}>
+              <HomeIcon Name="ART" Gambar={artIcon} />
+            </TouchableOpacity>
+            <TouchableOpacity onPress={()=> navigation.navigate("TukangKebun")}>
+              <HomeIcon Name="Tukang Kebun" Gambar={tkKebunIcon} />
+            </TouchableOpacity>
+            <TouchableOpacity onPress={()=> navigation.navigate("Driver")}>
+              <HomeIcon Name="Driver" Gambar={driverIcon} />
+            </TouchableOpacity>
+          </View>
 
-        <View style={styles.wrapperCardJasa}>
-          <TouchableOpacity onPress={() => navigation.navigate("Babysitter")}>
-            <HomeIcon Name="Babysitter" Gambar={babysitterIcon} />
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => navigation.navigate("Satpam")}>
-            <HomeIcon Name="Satpam" Gambar={satpamIcon} />
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => navigation.navigate("AsistenPribadi")}
-          >
-            <HomeIcon Name="Asisten Pribadi" Gambar={asistenPribadiIcon} />
-          </TouchableOpacity>
+          <View style={styles.wrapperCardJasa}>
+            <TouchableOpacity onPress={()=> navigation.navigate("Babysitter")}>
+              <HomeIcon Name="Babysitter" Gambar={babysitterIcon} />
+            </TouchableOpacity>
+            <TouchableOpacity onPress={()=> navigation.navigate("Satpam")}>
+              <HomeIcon Name="Satpam" Gambar={satpamIcon} />
+            </TouchableOpacity>
+            <TouchableOpacity onPress={()=> navigation.navigate("AsistenPribadi")}>
+              <HomeIcon Name="Asisten Pribadi" Gambar={asistenPribadiIcon} />
+            </TouchableOpacity>
+          </View>
         </View>
-      </View>
+      
     </View>
   );
 };
@@ -127,7 +124,7 @@ const styles = StyleSheet.create({
   },
   ImgHeader: {
     width: "100%",
-    height: Dimensions.get("window").height * 0.4,
+    height: Dimensions.get("window").height * 0.40,
   },
   containerLeft: {
     // flex: 1,
@@ -191,7 +188,7 @@ const styles = StyleSheet.create({
   wrapperCardJasa: {
     flexDirection: "row",
     justifyContent: "space-around",
-    alignItems: "center",
+    alignItems: 'center'
   },
   flex: {
     justifyContent: "center",
