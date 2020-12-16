@@ -54,10 +54,11 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   textJasa: {
-    fontSize: normalize(15),
+    fontSize: normalize(13),
     fontWeight: "200",
+    marginTop: 10,
     color: "black",
-    
+
     // marginTop: 50
   },
 });

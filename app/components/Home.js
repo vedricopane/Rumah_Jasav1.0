@@ -27,7 +27,7 @@ import Foto from "../assets/icons/tuyul.jpg";
 
 const Home = () => {
   return (
-    <ScrollView>
+    <View>
       <ImageBackground source={shape} style={styles.ImgHeader}>
         <View style={styles.centerscreen}>
           <Image source={LogoPutih} style={styles.logo} />
@@ -62,42 +62,33 @@ const Home = () => {
             </View>
           </View>
         </View>
-<<<<<<< HEAD
       </ImageBackground>
-=======
-        </ImageBackground>
->>>>>>> b465d3daa9b1b662f42661fbd05194b6c240b756
-        <View style={styles.containerLeft}>
-          <View style={styles.saldo}>
-            <View style={styles.wrapperSaldo}>
-              <Image source={SaldoIcon} />
-              <View style={styles.wrapperTextSaldo}>
-                <Text style={styles.textSaldo}>Saldo</Text>
-                <Text style={styles.textNominal}>Rp 200.000,-</Text>
-              </View>
-              <View style={styles.line} />
-              <Text style={styles.textTopUp}>Top Up</Text>
+      <View style={styles.containerLeft}>
+        <View style={styles.saldo}>
+          <View style={styles.wrapperSaldo}>
+            <Image source={SaldoIcon} />
+            <View style={styles.wrapperTextSaldo}>
+              <Text style={styles.textSaldo}>Saldo</Text>
+              <Text style={styles.textNominal}>Rp 200.000,-</Text>
             </View>
-          </View>
-          <Text style={styles.textPilihJasa}>Pilih Jasa</Text>
-          <View style={styles.wrapperCardJasa}>
-            <HomeIcon Name="ART" Gambar={artIcon} />
-            <HomeIcon Name="Tukang Kebun" Gambar={tkKebunIcon} />
-            <HomeIcon Name="Driver" Gambar={driverIcon} />
-          </View>
-
-          <View style={styles.wrapperCardJasa}>
-            <HomeIcon Name="Babysitter" Gambar={babysitterIcon} />
-            <HomeIcon Name="Satpam" Gambar={satpamIcon} />
-            <HomeIcon Name="Asisten Pribadi" Gambar={asistenPribadiIcon} />
+            <View style={styles.line} />
+            <Text style={styles.textTopUp}>Top Up</Text>
           </View>
         </View>
-<<<<<<< HEAD
-      {/* </ImageBackground> */}
-=======
-      
->>>>>>> b465d3daa9b1b662f42661fbd05194b6c240b756
-    </ScrollView>
+        <Text style={styles.textPilihJasa}>Pilih Jasa</Text>
+        <View style={styles.wrapperCardJasa}>
+          <HomeIcon Name="ART" Gambar={artIcon} />
+          <HomeIcon Name="Tukang Kebun" Gambar={tkKebunIcon} />
+          <HomeIcon Name="Driver" Gambar={driverIcon} />
+        </View>
+
+        <View style={styles.wrapperCardJasa}>
+          <HomeIcon Name="Babysitter" Gambar={babysitterIcon} />
+          <HomeIcon Name="Satpam" Gambar={satpamIcon} />
+          <HomeIcon Name="Asisten Pribadi" Gambar={asistenPribadiIcon} />
+        </View>
+      </View>
+    </View>
   );
 };
 
@@ -120,11 +111,7 @@ const styles = StyleSheet.create({
   },
   ImgHeader: {
     width: "100%",
-<<<<<<< HEAD
-    height: Dimensions.get("window").height * 0.4, 
-=======
-    height: Dimensions.get("window").height * 0.40,
->>>>>>> b465d3daa9b1b662f42661fbd05194b6c240b756
+    height: Dimensions.get("window").height * 0.3,
   },
   containerLeft: {
     // flex: 1,
@@ -140,17 +127,10 @@ const styles = StyleSheet.create({
     fontWeight: "700",
     letterSpacing: 7,
     color: "black",
-<<<<<<< HEAD
-    marginTop: 40,
-  },
-  saldo: {
-    marginTop: normalize(-33),
-=======
     marginTop: normalize(50),
   },
   saldo: {
     marginTop: normalize(-30),
->>>>>>> b465d3daa9b1b662f42661fbd05194b6c240b756
     width: 280,
     height: 55,
     backgroundColor: "white",
@@ -195,7 +175,7 @@ const styles = StyleSheet.create({
   wrapperCardJasa: {
     flexDirection: "row",
     justifyContent: "space-around",
-    alignItems: 'center'
+    alignItems: "center",
   },
   flex: {
     justifyContent: "center",

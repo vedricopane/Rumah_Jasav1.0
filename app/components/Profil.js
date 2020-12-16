@@ -1,5 +1,11 @@
 import React from "react";
-import { StyleSheet, View, Image, TouchableOpacity } from "react-native";
+import {
+  StyleSheet,
+  View,
+  Image,
+  TouchableOpacity,
+  SafeAreaView,
+} from "react-native";
 import {
   Container,
   Separator,
@@ -19,7 +25,7 @@ import Foto from "../assets/icons/tuyul.jpg";
 const Profil = ({ navigation }) => {
   return (
     <Container>
-      <Button full backgroundColor="#e42313">
+      <Button full style={{ backgroundColor: "#fff" }}>
         <Text style={styles.TabText}>Profile</Text>
       </Button>
       <Content>
