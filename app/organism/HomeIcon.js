@@ -48,8 +48,8 @@ const styles = StyleSheet.create({
     // position: "relative",
   },
   iconJasa: {
-    width: normalize(50),
-    height: normalize(50),
+    width: normalize(55),
+    height: normalize(55),
     justifyContent: "center",
     alignItems: "center",
   },

@@ -11,12 +11,12 @@ import {
   SafeAreaView,
   ScrollView,
 } from "react-native";
-import artIcon from "../assets/icons/artIcon.png";
-import tkKebunIcon from "../assets/icons/tkKebunIcon.png";
-import driverIcon from "../assets/icons/driverIcon.png";
-import babysitterIcon from "../assets/icons/babysitterIcon.png";
-import satpamIcon from "../assets/icons/satpamIcon.png";
-import asistenPribadiIcon from "../assets/icons/asistenPribadiIcon.png";
+import artIcon from "../assets/icons/artIcon2.png";
+import tkKebunIcon from "../assets/icons/tkKebunIcon2.png";
+import driverIcon from "../assets/icons/driverIcon2.png";
+import babysitterIcon from "../assets/icons/babysitterIcon2.png";
+import satpamIcon from "../assets/icons/satpamIcon2.png";
+import asistenPribadiIcon from "../assets/icons/asistenPribadiIcon2.png";
 
 import HomeIcon from "../organism/HomeIcon";
 import SaldoIcon from "../assets/icons/saldoIcon.png";
@@ -140,7 +140,7 @@ const styles = StyleSheet.create({
     fontWeight: "700",
     letterSpacing: 7,
     color: "black",
-    marginTop: normalize(50),
+    marginTop: normalize(40),
   },
   saldo: {
     marginTop: normalize(-30),
