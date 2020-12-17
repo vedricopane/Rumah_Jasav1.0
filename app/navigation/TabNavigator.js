@@ -5,6 +5,9 @@ import Home from "../components/Home";
 import Pemesanan from "../components/Pemesanan";
 import Profil from "../components/Profil";
 import TabBar from "../components/TabBar";
+
+import Register from "../components/Register";
+
 import Login from "../components/Login";
 import ART from "../components/ART";
 import TukangKebun from "../components/TukangKebun";
@@ -21,10 +24,17 @@ const LoginStack = createStackNavigator();
 
 const LoginNavigator = () => {
   return (
-    <LoginStack.Navigator initialRouteName="Login">
+    <LoginStack.Navigator>
       <LoginStack.Screen
         name="Login"
         component={Login}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <LoginStack.Screen
+        name="Register"
+        component={Register}
         options={{
           headerShown: false,
         }}

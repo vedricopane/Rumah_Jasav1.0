@@ -1,26 +1,29 @@
 {
-  "main": "node_modules/expo/AppEntry.js",
   "scripts": {
-    "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
-    "web": "expo start --web",
-    "eject": "expo eject"
+    "start": "react-native start",
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "web": "expo start --web"
   },
   "dependencies": {
+    "@react-native-community/datetimepicker": "3.0.4",
     "@react-native-community/masked-view": "0.1.10",
+    "@react-native-firebase/app": "^10.2.0",
+    "@react-native-firebase/auth": "^10.2.0",
     "@react-navigation/bottom-tabs": "^5.11.2",
     "@react-navigation/material-top-tabs": "^5.3.10",
     "@react-navigation/native": "^5.8.10",
     "@react-navigation/stack": "^5.12.8",
     "expo": "^40.0.0",
     "expo-font": "~8.4.0",
+    "expo-splash-screen": "~0.8.0",
     "expo-status-bar": "~1.0.2",
-    "expo-updates": "~0.4.1",
+    "expo-updates": "~0.4.0",
+    "firebase": "8.2.0",
     "native-base": "^2.13.15",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-39.0.4.tar.gz",
+    "react-native": "~0.63.4",
     "react-native-gesture-handler": "~1.8.0",
     "react-native-normalize": "^1.0.1",
     "react-native-normalized": "^2.0.1",
@@ -28,15 +31,21 @@
     "react-native-safe-area-context": "3.1.9",
     "react-native-screens": "~2.15.0",
     "react-native-tab-view": "^2.15.2",
+    "react-native-unimodules": "~0.12.0",
     "react-native-web": "~0.13.12"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.10"
+    "@babel/core": "^7.12.10",
+    "babel-jest": "~25.2.6",
+    "jest": "~25.2.6",
+    "react-test-renderer": "~16.13.1"
   },
   "rnpm": {
     "assets": [
       "./app/assets/Font"
     ]
   },
-  "private": true
+  "private": true,
+  "name": "Rumah_Jasav1.0",
+  "version": "1.0.0"
 }

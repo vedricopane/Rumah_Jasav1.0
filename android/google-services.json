@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "515802396732",
+    "project_id": "rumahjasa-b6340",
+    "storage_bucket": "rumahjasa-b6340.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:515802396732:android:946e64b9c18fad9a09ab39",
+        "android_client_info": {
+          "package_name": "Rumah.Jasa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "515802396732-hs2ogtr63v8evjk40v674mba2hea30ma.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDjGgNZRudfkMygMnwNi1kEjSU4SWEPMRY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "515802396732-hs2ogtr63v8evjk40v674mba2hea30ma.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

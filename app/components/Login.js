@@ -1,5 +1,11 @@
 import React from "react";
-import { View, StyleSheet, Image, Dimensions } from "react-native";
+import {
+  View,
+  StyleSheet,
+  Image,
+  Dimensions,
+  TouchableOpacity,
+} from "react-native";
 import {
   Container,
   Header,
@@ -48,9 +54,11 @@ const Login = ({ navigation }) => {
             <View style={{ flex: 1, marginTop: 20 }}>
               <Text style={{}}>Lupa Kata Sandi</Text>
             </View>
-            <View style={{ flex: 1, textAlign: "right", marginTop: 20 }}>
-              <Text style={{ textAlign: "right" }}>Lupa Kata Sandi</Text>
-            </View>
+            <TouchableOpacity onPress={() => navigation.navigate("Register")}>
+              <View style={{ flex: 1, textAlign: "right", marginTop: 20 }}>
+                <Text style={{ textAlign: "right" }}>Daftar Sekarang</Text>
+              </View>
+            </TouchableOpacity>
           </View>
           <View style={styles.centerscreen2}>
             <View style={{ flex: 1, marginTop: 20, textAlign: "center" }}>
