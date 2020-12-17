@@ -1,5 +1,13 @@
 import React from "react";
-import { View, StyleSheet, Image, Dimensions, Alert } from "react-native";
+import {
+  View,
+  StyleSheet,
+  Image,
+  Dimensions,
+  Alert,
+  TouchableOpacity,
+  Modal,
+} from "react-native";
 import {
   Container,
   Header,
@@ -11,11 +19,15 @@ import {
   Input,
   Label,
   Title,
+  Spinner,
   Content,
   Icon,
 } from "native-base";
 import LogoMerah from "../assets/icons/Rumah_Jasa_Merah.png";
 import firebase from "firebase";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { useNavigation } from "@react-navigation/native";
+import { Restart } from "fiction-expo-restart";
 
 class Login extends React.Component {
   constructor() {
@@ -31,20 +43,71 @@ class Login extends React.Component {
       Provinsi: "",
       KodePos: "",
       NomorHP: "",
+      loading: false,
     };
   }
 
   __doCreateUser = async () => {
-    let email = this.state.Email;
-    let password = this.state.Password;
+    const email = this.state.Email;
+    const password = this.state.Password;
+    const NamaLengkap = this.state.NamaLengkap;
+    const Alamat = this.state.Alamat;
+    const Kota = this.state.Kota;
+    const Provinsi = this.state.Provinsi;
+    const KodePos = this.state.KodePos;
+    const NomorHP = this.state.NomorHP;
+    const { navigation } = this.props;
+    this.setState({ loading: true });
     await firebase
       .auth()
       .createUserWithEmailAndPassword(email, password)
-      .then((user) => {
-        Alert.alert("Success ✅", "Account created successfully");
+      .then(function (user) {
+        console.log("uid", user.user.uid);
+        firebase
+          .database()
+          .ref("users/" + user.user.uid)
+          .set(
+            {
+              NamaLengkap: NamaLengkap,
+              Alamat: Alamat,
+              Kota: Kota,
+              Provinsi: Provinsi,
+              KodePos: KodePos,
+              NomorHP: NomorHP,
+              Email: email,
+            },
+            (error) => {
+              if (error) {
+                console.log(error.message);
+                this.setState({ loading: false });
+
+                Alert.alert("❌ Failed Write ❌", error.message);
+              } else {
+                const value = {
+                  NamaLengkap: NamaLengkap,
+                  Email: email,
+                  NomorHP: NomorHP,
+                  NewAccount: true,
+                  Uid: user.user.uid,
+                };
+                try {
+                  const jsonValue = JSON.stringify(value);
+                  AsyncStorage.setItem("UserData", jsonValue);
+                  Restart();
+                } catch (e) {
+                  console.log(e);
+                  this.setState({ loading: false });
+                  // Alert.alert("Failed Relog ✅", e);
+                }
+              }
+            }
+          );
       })
-      .catch((error) => {
-        Alert.alert("Failed ✅", error.message);
+      .catch(function (error) {
+        console.log(error.message);
+        this.setState({ loading: false });
+
+        Alert.alert("❌ Failed Register ❌", error.message);
       });
   };
 
@@ -52,6 +115,31 @@ class Login extends React.Component {
     const { label, icon, onChange } = this.props;
     return (
       <Container>
+        <Modal
+          animationType="slide"
+          transparent={true}
+          visible={this.state.loading}
+        >
+          <View>
+            <TouchableOpacity
+              style={{
+                marginTop: Math.round(Dimensions.get("window").width) / 1.5,
+                alignItems: "center",
+                alignContent: "center",
+                backgroundColor: "white",
+                margin: 100,
+                borderWidth: 1,
+                borderColor: "#E4E4E4",
+              }}
+            >
+              <Spinner color="red" />
+              <Text style={{ fontWeight: "bold", fontSize: 20, marginTop: 0 }}>
+                Loading
+              </Text>
+              <Text style={{ marginBottom: 20 }}>Harap Menunggu</Text>
+            </TouchableOpacity>
+          </View>
+        </Modal>
         <Content>
           <View style={styles.centerHorizontal}>
             <View style={styles.centerscreen}>
@@ -179,7 +267,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#E42313",
     marginTop: 30,
-
+    marginBottom: 20,
     textAlign: "center",
     justifyContent: "center",
     alignItems: "center",

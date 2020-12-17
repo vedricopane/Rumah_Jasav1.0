@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Home from "../components/Home";
@@ -16,88 +16,121 @@ import Babysitter from "../components/Babysitter";
 import Satpam from "../components/Satpam";
 import AsistenPribadi from "../components/AsistenPribadi";
 import EditProfil from "../components/DetailProfil";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import SplashScreen from "../components/Splash";
 
 const Tab = createBottomTabNavigator();
 const OrderStack = createStackNavigator();
 const ProfileStack = createStackNavigator();
 const LoginStack = createStackNavigator();
 
-const LoginNavigator = () => {
-  return (
-    <LoginStack.Navigator>
-      <LoginStack.Screen
-        name="Login"
-        component={Login}
-        options={{
-          headerShown: false,
-        }}
-      />
-      <LoginStack.Screen
-        name="Register"
-        component={Register}
-        options={{
-          headerShown: false,
-        }}
-      />
-      <LoginStack.Screen
-        name="TabNavigator"
-        component={TabNavigator}
-        options={{
-          headerShown: false,
-        }}
-      />
-      <LoginStack.Screen
-        name="ART"
-        component={ART}
-        options={{
-          headerShown: false,
-        }}
-      />
-      <LoginStack.Screen
-        name="TukangKebun"
-        component={TukangKebun}
-        options={{
-          headerShown: false,
-        }}
-      />
-      <LoginStack.Screen
-        name="Driver"
-        component={Driver}
-        options={{
-          headerShown: false,
-        }}
-      />
-      <LoginStack.Screen
-        name="Babysitter"
-        component={Babysitter}
-        options={{
-          headerShown: false,
-        }}
-      />
-      <LoginStack.Screen
-        name="Satpam"
-        component={Satpam}
-        options={{
-          headerShown: false,
-        }}
-      />
-      <LoginStack.Screen
-        name="AsistenPribadi"
-        component={AsistenPribadi}
-        options={{
-          headerShown: false,
-        }}
-      />
-      <LoginStack.Screen
-        name="EditProfil"
-        component={EditProfil}
-        options={{
-          headerShown: false,
-        }}
-      />
-    </LoginStack.Navigator>
-  );
-};
+class LoginNavigator extends Component {
+  constructor() {
+    super();
+    this.state = {
+      loading: true,
+      key: false,
+    };
+  }
+  async componentDidMount() {
+    await AsyncStorage.getItem("UserData", (error, result) => {
+      if (result) {
+        this.setState({ key: true, loading: false });
+        console.log("Data :" + result);
+      } else {
+        this.setState({ loading: false });
+      }
+    });
+  }
+  render() {
+    const { key, loading } = this.state;
+    if (!loading) {
+      return (
+        <LoginStack.Navigator>
+          {key ? (
+            <>
+              <LoginStack.Screen
+                name="TabNavigator"
+                component={TabNavigator}
+                options={{
+                  headerShown: false,
+                }}
+              />
+              <LoginStack.Screen
+                name="ART"
+                component={ART}
+                options={{
+                  headerShown: false,
+                }}
+              />
+              <LoginStack.Screen
+                name="TukangKebun"
+                component={TukangKebun}
+                options={{
+                  headerShown: false,
+                }}
+              />
+              <LoginStack.Screen
+                name="Driver"
+                component={Driver}
+                options={{
+                  headerShown: false,
+                }}
+              />
+              <LoginStack.Screen
+                name="Babysitter"
+                component={Babysitter}
+                options={{
+                  headerShown: false,
+                }}
+              />
+              <LoginStack.Screen
+                name="Satpam"
+                component={Satpam}
+                options={{
+                  headerShown: false,
+                }}
+              />
+              <LoginStack.Screen
+                name="AsistenPribadi"
+                component={AsistenPribadi}
+                options={{
+                  headerShown: false,
+                }}
+              />
+              <LoginStack.Screen
+                name="EditProfil"
+                component={EditProfil}
+                options={{
+                  headerShown: false,
+                }}
+              />
+            </>
+          ) : (
+            <>
+              <LoginStack.Screen
+                name="Login"
+                component={Login}
+                options={{
+                  headerShown: false,
+                }}
+              />
+              <LoginStack.Screen
+                name="Register"
+                component={Register}
+                options={{
+                  headerShown: false,
+                }}
+              />
+            </>
+          )}
+        </LoginStack.Navigator>
+      );
+    } else {
+      return <SplashScreen />;
+    }
+  }
+}
 
 const TabNavigator = () => {
   return (

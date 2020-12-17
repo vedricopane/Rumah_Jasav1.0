@@ -24,44 +24,67 @@ import shape from "../assets/Background/Shape.png";
 import normalize from "react-native-normalize";
 import LogoPutih from "../assets/icons/Rumah_Jasa_1.png";
 import Foto from "../assets/icons/tuyul.jpg";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
-const Home = ({navigation}) => {
-  return (
-    <View>
-      <ImageBackground source={shape} style={styles.ImgHeader}>
-        <View style={styles.centerscreen}>
-          <Image source={LogoPutih} style={styles.logo} />
-        </View>
-        <View style={styles.centerscreen}>
-          <View style={styles.flex}>
-            <Image style={styles.fotoprofil} source={Foto} />
-            <View
-              style={{
-                paddingHorizontal: normalize(38),
-                paddingTop: normalize(10),
-              }}
-            >
-              <Text
+class Home extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      loading: true,
+      NamaLengkap: "",
+    };
+  }
+  async componentDidMount() {
+    await AsyncStorage.getItem("UserData", (error, result) => {
+      if (result) {
+        const parsed = JSON.parse(result);
+        console.log(parsed);
+        this.setState({ loading: false, NamaLengkap: parsed.NamaLengkap });
+      } else {
+        this.setState({ loading: false });
+      }
+    });
+  }
+  render() {
+    const { NamaLengkap, loading } = this.state;
+    const { navigation } = this.props;
+
+    return (
+      <View>
+        <ImageBackground source={shape} style={styles.ImgHeader}>
+          <View style={styles.centerscreen}>
+            <Image source={LogoPutih} style={styles.logo} />
+          </View>
+          <View style={styles.centerscreen}>
+            <View style={styles.flex}>
+              <Image style={styles.fotoprofil} source={Foto} />
+              <View
                 style={{
-                  fontSize: normalize(18),
-                  fontWeight: "300",
-                  color: "white",
+                  paddingHorizontal: normalize(38),
+                  paddingTop: normalize(10),
                 }}
               >
-                Selamat Datang,
-              </Text>
-              <Text
-                style={{
-                  fontSize: normalize(20),
-                  fontWeight: "bold",
-                  color: "white",
-                }}
-              >
-                Tiana Rosser
-              </Text>
+                <Text
+                  style={{
+                    fontSize: normalize(18),
+                    fontWeight: "300",
+                    color: "white",
+                  }}
+                >
+                  Selamat Datang,
+                </Text>
+                <Text
+                  style={{
+                    fontSize: normalize(20),
+                    fontWeight: "bold",
+                    color: "white",
+                  }}
+                >
+                  {NamaLengkap}
+                </Text>
+              </View>
             </View>
           </View>
-        </View>
         </ImageBackground>
         <View style={styles.containerLeft}>
           <View style={styles.saldo}>
@@ -77,33 +100,37 @@ const Home = ({navigation}) => {
           </View>
           <Text style={styles.textPilihJasa}>Pilih Jasa</Text>
           <View style={styles.wrapperCardJasa}>
-            <TouchableOpacity onPress={()=> navigation.navigate("ART")}>
+            <TouchableOpacity onPress={() => navigation.navigate("ART")}>
               <HomeIcon Name="ART" Gambar={artIcon} />
             </TouchableOpacity>
-            <TouchableOpacity onPress={()=> navigation.navigate("TukangKebun")}>
+            <TouchableOpacity
+              onPress={() => navigation.navigate("TukangKebun")}
+            >
               <HomeIcon Name="Tukang Kebun" Gambar={tkKebunIcon} />
             </TouchableOpacity>
-            <TouchableOpacity onPress={()=> navigation.navigate("Driver")}>
+            <TouchableOpacity onPress={() => navigation.navigate("Driver")}>
               <HomeIcon Name="Driver" Gambar={driverIcon} />
             </TouchableOpacity>
           </View>
 
           <View style={styles.wrapperCardJasa}>
-            <TouchableOpacity onPress={()=> navigation.navigate("Babysitter")}>
+            <TouchableOpacity onPress={() => navigation.navigate("Babysitter")}>
               <HomeIcon Name="Babysitter" Gambar={babysitterIcon} />
             </TouchableOpacity>
-            <TouchableOpacity onPress={()=> navigation.navigate("Satpam")}>
+            <TouchableOpacity onPress={() => navigation.navigate("Satpam")}>
               <HomeIcon Name="Satpam" Gambar={satpamIcon} />
             </TouchableOpacity>
-            <TouchableOpacity onPress={()=> navigation.navigate("AsistenPribadi")}>
+            <TouchableOpacity
+              onPress={() => navigation.navigate("AsistenPribadi")}
+            >
               <HomeIcon Name="Asisten Pribadi" Gambar={asistenPribadiIcon} />
             </TouchableOpacity>
           </View>
         </View>
-      
-    </View>
-  );
-};
+      </View>
+    );
+  }
+}
 
 const styles = StyleSheet.create({
   fotoprofil: {
@@ -124,7 +151,7 @@ const styles = StyleSheet.create({
   },
   ImgHeader: {
     width: "100%",
-    height: Dimensions.get("window").height * 0.40,
+    height: Dimensions.get("window").height * 0.4,
   },
   containerLeft: {
     // flex: 1,
@@ -188,7 +215,7 @@ const styles = StyleSheet.create({
   wrapperCardJasa: {
     flexDirection: "row",
     justifyContent: "space-around",
-    alignItems: 'center'
+    alignItems: "center",
   },
   flex: {
     justifyContent: "center",
