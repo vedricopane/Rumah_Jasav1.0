@@ -166,14 +166,11 @@ const ART = () => {
                 <Text style={styles.textHargaJasa}>Harga Jasa</Text>
                 <Text style={styles.textNominal}>Rp 1.075.000,-</Text>
               </View>
-              <Body>
-
-              </Body>
-              {/* <View>
+              <View>
                 <Button style={styles.buttonPesan}>
                   <Text style={styles.textbutton}>Pesan</Text>
                 </Button>
-              </View> */}
+              </View>
           </Separator>
         </Content>
       </Container>
@@ -198,11 +195,11 @@ const styles = StyleSheet.create({
   },
   backgroundcolor: {
     backgroundColor: "#fff",
-    marginTop: 5
+    marginTop: normalize(5)
   },
   backgroundcolorHargaJasa: {
     backgroundColor: "#fff",
-    marginTop: 40,
+    marginTop: normalize(40),
     flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
@@ -219,24 +216,24 @@ const styles = StyleSheet.create({
   textRadio: {
     color: 'black',
     fontSize: 16,
-    paddingLeft: 10
+    paddingLeft: normalize(10)
   },
   textCheckBox: {
     color: 'black',
     fontSize: 16,
-    paddingLeft: 10
+    paddingLeft: normalize(10)
   },
   wrapperHargaJasa: {
     flexDirection: "column",
     justifyContent: "space-around",
-    paddingLeft: 6,
+    paddingLeft: normalize(6),
     marginLeft: normalize(-12)
   },
   textHargaJasa: {
-    fontSize: 16,
-    fontWeight: "bold",
-    letterSpacing: 2,
-    color: "#E42313",
+    fontSize: 14,
+    fontWeight: 'bold',
+    letterSpacing: 1,
+    color: "black",
   },
   textNominal: {
     fontSize: 14,
