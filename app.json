@@ -1,8 +1,9 @@
 {
   "expo": {
-    "name": "rumahJasa_verIco1_4",
-    "slug": "rumahJasa_verIco1_4",
+    "name": "Rumah Jasa",
+    "slug": "rumahjasa",
     "version": "1.0.0",
+    "privacy": "public",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
@@ -25,18 +26,8 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       },
-      "config": {
-        "firebase": {
-          "apiKey": "AIzaSyBTawt6bzIWuYh6wm33mKKDPvr1p2NsjEw",
-          "authDomain": "rumahjasa-b6340.firebaseapp.com",
-          "projectId": "rumahjasa-b6340",
-          "storageBucket": "rumahjasa-b6340.appspot.com",
-          "messagingSenderId": "515802396732",
-          "appId": "1:515802396732:web:61c3c9181fbfd08009ab39",
-          "measurementId": "G-X52K2J11M9"
-        }
-      },
-      "package": "yes"
+     
+      "package": "app.rumahjasa.App"
     },
     "web": {
       "favicon": "./assets/favicon.png",
