@@ -49,7 +49,7 @@ const ART = () => {
                 <Radio
                   color={"#E42313"}
                   selectedColor={"#E42313"}
-                  selected={false}
+                  selected={true}
                 />
               </Right>
             </ListItem>
@@ -126,7 +126,7 @@ const ART = () => {
                 <Text style={styles.textCheckBox}>Menyetrika Pakaian</Text>
               </Left>
               <Right>
-                <CheckBox checked={false} 
+                <CheckBox checked={true} 
                           color={"#E42313"} 
                           selectedColor={"#E42313"} style={{marginRight: 13}}/>
               </Right>
