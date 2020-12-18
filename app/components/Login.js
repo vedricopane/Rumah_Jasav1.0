@@ -27,7 +27,7 @@ import LogoMerah from "../assets/icons/Rumah_Jasa_Merah.png";
 import firebase from "firebase";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useNavigation } from "@react-navigation/native";
-import { Restart } from "fiction-expo-restart";
+import * as Updates from "expo-updates";
 
 class Login extends React.Component {
   constructor() {
@@ -77,7 +77,7 @@ class Login extends React.Component {
               try {
                 const jsonValue = JSON.stringify(value);
                 AsyncStorage.setItem("UserData", jsonValue);
-                Restart();
+                Updates.reloadAsync();
               } catch (e) {
                 console.log(e);
                 // Alert.alert("Failed Relog ✅", e);

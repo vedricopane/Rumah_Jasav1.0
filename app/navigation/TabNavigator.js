@@ -169,7 +169,6 @@ const OrderStackScreen = () => {
         },
         headerTintColor: "#fff",
         headerTitleStyle: {
-          fontFamily: "Roboto",
           fontWeight: "bold",
           fontSize: 17,
         },
@@ -193,7 +192,6 @@ const ProfileStackScreen = () => {
         },
         headerTintColor: "#fff",
         headerTitleStyle: {
-          fontFamily: "Roboto",
           fontWeight: "bold",
           fontSize: 17,
         },

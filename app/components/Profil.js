@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   SafeAreaView,
   Modal,
+  Alert,
   Dimensions,
 } from "react-native";
 import {
@@ -27,7 +28,7 @@ import Foto from "../assets/icons/tuyul.jpg";
 
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useNavigation } from "@react-navigation/native";
-import { Restart } from "fiction-expo-restart";
+import * as Updates from "expo-updates";
 
 class Profil extends React.Component {
   constructor() {
@@ -58,7 +59,7 @@ class Profil extends React.Component {
   __doLogout = async () => {
     try {
       await AsyncStorage.removeItem("UserData");
-      Restart();
+      Updates.reloadAsync();
     } catch (exception) {
       Alert.alert("❌ Gagal Logout ❌", "Hubungi Penyedia jasa");
     }
@@ -83,16 +84,13 @@ class Profil extends React.Component {
         justifyContent: "center",
         alignItems: "center",
       },
-      baseText: {
-        fontFamily: "Roboto",
-      },
+      baseText: {},
       titleText: {
         fontSize: 20,
         fontWeight: "500",
         color: "#e42313",
       },
       isiText: {
-        fontFamily: "Roboto",
         fontSize: 14,
         fontStyle: "normal",
       },
@@ -100,12 +98,10 @@ class Profil extends React.Component {
         backgroundColor: "#fff",
       },
       TitleName: {
-        fontFamily: "Roboto",
         fontSize: 20,
         fontWeight: "bold",
       },
       IsiName: {
-        fontFamily: "Roboto",
         fontSize: 12,
         fontWeight: "300",
       },
@@ -114,7 +110,6 @@ class Profil extends React.Component {
       },
       TabText: {
         color: "#fff",
-        fontFamily: "Roboto",
         fontSize: 17,
         fontWeight: "bold",
         fontStyle: "normal",
